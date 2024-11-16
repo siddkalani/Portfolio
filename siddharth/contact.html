@@ -295,7 +295,7 @@
             </div>
             <div class="row once-in">
                 <div class="flex-col">
-                    <form class="form" method="post" action="contact.html"
+                    <form class="form" method="post" id="contactForm"
                         enctype="multipart/form-data" novalidate>
                         <div class="website-field">
                             <label class="label" for="tel">Phone Number</label>
@@ -464,6 +464,41 @@
 
     <script src="./assets/js/locomotive-scroll.min.js"></script>
     <script defer src="./assets/js/index-new.js"></script>
+
+    <script>
+        const form = document.getElementById("contactForm");
+      
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+      
+          const formData = {
+            name: document.getElementById("form-name").value,
+            email: document.getElementById("form-email").value,
+            company: document.getElementById("form-company").value,
+            service: document.getElementById("form-service").value,
+            message: document.getElementById("form-message").value,
+            phone: document.getElementById("form-tel").value,
+          };
+      
+          try {
+            const response = await fetch("http://localhost:5001/submit-form", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formData),
+            });
+      
+            if (response.ok) {
+              alert("Form submitted successfully!");
+              form.reset();
+            } else {
+              alert("Error submitting form.");
+            }
+          } catch (err) {
+            alert("An error occurred: " + err.message);
+          }
+        });
+      </script>
+      
 </body>
 
 </html>
