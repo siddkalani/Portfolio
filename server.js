@@ -10,7 +10,7 @@ const PORT = 5001;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB Atlas connection
+// MongoDB Atlas connectio
 const uri = "mongodb+srv://admin:admin@portfolio.swr5h.mongodb.net/?retryWrites=true&w=majority&appName=portfolio"; // Replace with your connection string
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
