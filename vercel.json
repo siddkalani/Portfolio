@@ -1,8 +1,8 @@
 {
     "version": 2,
     "rewrites": [
-      { "source": "/contact", "destination": "/contact.html" },
-      { "source": "/about", "destination": "/about.html" },
+      { "source": "/contact", "destination": "/contact" },
+      { "source": "/about", "destination": "/about" },
       { "source": "/(.*)", "destination": "/api" }
     ]
   }
