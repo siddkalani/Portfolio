@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 let cachedDb = null;
 
@@ -8,7 +9,7 @@ async function connectToDatabase() {
     return cachedDb;
   }
 
-  const uri = "mongodb+srv://admin:admin@portfolio.swr5h.mongodb.net/?retryWrites=true&w=majority&appName=portfolio";
+  const uri = process.env.MONGO_URI;
   const client = await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
   cachedDb = client.connection;
   return cachedDb;
