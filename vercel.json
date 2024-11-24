@@ -2,9 +2,9 @@
     "version": 2,
     "cleanUrls": true,
     "rewrites": [
-      { "source": "/contact", "destination": "/contact.html" },
-      { "source": "/about", "destination": "/about.html" },
-      { "source": "/", "destination": "/index.html" }
+      { "source": "/contact.html", "destination": "/contact.html" },
+      { "source": "/about.html", "destination": "/about.html" },
+      { "source": "/index.html", "destination": "/index.html" }
     ],
     "functions": {
       "api/submit-form.js": {
