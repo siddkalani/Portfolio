@@ -8,8 +8,16 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5002;
 
+// CORS configuration options
+const corsOptions = {
+    origin: ["https://portfolio-2-cqqw.onrender.com","http://127.0.0.1:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    allowedHeaders: ["Content-Type"], // Allowed headers
+    credentials: true, // If you need to send cookies or authentication headers
+};
+
 // Apply CORS middleware with options
-app.use(cors());
+app.use(cors(corsOptions));
 
 // If using Express 4.16+ you can use express.json() instead of bodyParser.json()
 app.use(bodyParser.json());
