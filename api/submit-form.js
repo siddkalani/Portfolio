@@ -10,7 +10,7 @@ const port = process.env.PORT || 5002;
 
 // CORS configuration options
 const corsOptions = {
-    origin: ["https://portfolio-646d.onrender.com"],
+    origin: ["https://f1solutions.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type"], // Allowed headers
     credentials: true, // If you need to send cookies or authentication headers
