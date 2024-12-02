@@ -466,6 +466,7 @@
         
             if (form) {
                 submitButton.addEventListener("click", async () => {
+                    event.preventDefault(); // Prevent form's default submission
                     // Add loading state
                     submitButton.textContent = "Submitting...";
                     submitButton.disabled = true;
